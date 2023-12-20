@@ -25,7 +25,7 @@ class ModelAnalytics:
             return popular_artist_data
         except Exception as e:
             self.conn.rollback()
-            print(f"Error in popular artist analytics: {str(e)}")
+            print(f"Error With Analytics Of Popular Artist: {str(e)}")
             return None
 
     def number_of_performance(self):
@@ -55,7 +55,7 @@ class ModelAnalytics:
             return number_of_performance_data
         except Exception as e:
             self.conn.rollback()
-            print(f"Error in analyzing the number of performance: {str(e)}")
+            print(f"Error With Analytics Of Number Of Performance: {str(e)}")
             return None
 
     def genre_analytics(self):
@@ -90,5 +90,5 @@ class ModelAnalytics:
             return genre_data
         except Exception as e:
             self.conn.rollback()
-            print(f"Error in genre analytics: {str(e)}")
+            print(f"Error With Analytics Of Genre: {str(e)}")
             return None

@@ -8,9 +8,9 @@ class ControllerFestival:
         Festival_id = self.view_Festival.get_Festival_id()
         name, price, city = self.view_Festival.get_Festival_input()
         if self.model_Festival.add_Festival(Festival_id, name, price, city):
-            self.view_Festival.show_Festival_message("Festival added successfully!")
+            self.view_Festival.show_Festival_message("Successfully Added A Festival")
         else:
-            self.view_Festival.show_Festival_message("Failed to add Festival.")
+            self.view_Festival.show_Festival_message("Festival Don`t Added")
 
     def view_Festivals(self):
         Festivals = self.model_Festival.get_all_Festivals()
@@ -31,11 +31,11 @@ class ControllerFestival:
 
             # Display a message about the result of the operation
             if success:
-                self.view_Festival.show_Festival_message("Festival updated successfully!")
+                self.view_Festival.show_Festival_message("Successfully Updated A Festival")
             else:
-                self.view_Festival.show_Festival_message("Failed to update Festival.")
+                self.view_Festival.show_Festival_message("Festival Don`t Updated")
         else:
-            self.view_Festival.show_Festival_message("Festival with the specified ID does not exist.")
+            self.view_Festival.show_Festival_message("It Does`nt Exist A Festival With This ID")
 
     def delete_Festival(self):
         Festival_id = self.view_Festival.get_Festival_id()
@@ -45,31 +45,31 @@ class ControllerFestival:
 
         if Festival_exists:
             if self.model_Festival.delete_Festival(Festival_id):
-                self.view_Festival.show_Festival_message("Festival deleted successfully!")
+                self.view_Festival.show_Festival_message("Successfully Deleted A Festival")
             else:
-                self.view_Festival.show_Festival_message("Failed to delete Festival.")
+                self.view_Festival.show_Festival_message("Festival Don`t Deleted")
         else:
-            self.view_Festival.show_Festival_message("Festival with the specified ID does not exist.")
+            self.view_Festival.show_Festival_message("It Does`nt Exist A Festival With This ID")
 
     def create_Festival_sequence(self):
         # Call the create_client_sequence method from the ModelFestival class
         self.model_Festival.create_Festival_sequence()
-        self.view_Festival.show_Festival_message("Festival sequence created successfully!")
+        self.view_Festival.show_Festival_message("Successfully Generates Festival`s Sequence")
 
     def generate_rand_Festival_data(self, number_of_operations):
         # Call the generate_rand_Festival_data method from the ModelFestival class
         success = self.model_Festival.generate_rand_Festival_data(number_of_operations)
 
         if success:
-            self.view_Festival.show_Festival_message(f"{number_of_operations} Festivals generated successfully!")
+            self.view_Festival.show_Festival_message(f"{number_of_operations} Successfully Generates Festival")
         else:
-            self.view_Festival.show_Festival_message("Failed to generate Festivals.")
+            self.view_Festival.show_Festival_message("Festival Don`t Created")
 
     def truncate_Festival_table(self):
         # Call the method of the corresponding model
         success = self.model_Festival.truncate_Festival_table()
 
         if success:
-            self.view_Festival.show_Festival_message("All Festival data truncated successfully!")
+            self.view_Festival.show_Festival_message("Successfully Deleted All Festival`s Data")
         else:
-            self.view_Festival.show_Festival_message("Failed to truncate Festival data.")
+            self.view_Festival.show_Festival_message("Festival All Data Don`t delete`t")

@@ -63,29 +63,29 @@ class Controller:
                 break
 
     MENU_OPTIONS = [
-        "Add Performance",
-        "View Performance",
-        "Update Performance",
-        "Delete Performance",
-        "Add Festival",
-        "View Festivals",
-        "Update Festival",
-        "Delete Festival",
-        "Add Performer",
-        "View Performer",
-        "Update Performer",
-        "Delete Performer",
-        "Generate Random Data",
-        "Truncate All Tables",
-        "Display Analytics",
-        "Quit"
+        "Add New Performance",
+        "Show Performance By Id",
+        "Renewal Performance",
+        "Remove Performance",
+        "Add New Festival",
+        "Show Festival By Id",
+        "Renewal Festival",
+        "Remove Festival",
+        "Add New Performer",
+        "Show Performer By Id",
+        "Renewal Performer",
+        "Remove Performer",
+        "Create Data By Random",
+        "Delete All Data",
+        "View Analytics",
+        "Exit"
     ]
 
     def show_menu(self):
-        self.view_Performance.show_Performance_message("\nMenu:")
+        self.view_Performance.show_Performance_message("\nMain Menu:")
         for idx, option in enumerate(self.MENU_OPTIONS, start=1):
             self.view_Performance.show_Performance_message(f"{idx}. {option}")
-        return input("Enter your choice: ")
+        return input("Choose an action : ")
 
     def create_performer_sequence(self):
         self.controller_Performer.create_Performer_sequence()
@@ -106,7 +106,7 @@ class Controller:
         self.controller_Performance.generate_rand_Performance_data(number_of_operations)
 
     def generate_rand_data(self):
-        number_of_operations = int(input("Enter number of operations: "))
+        number_of_operations = int(input("Input Number Of Generations: "))
         self.create_performer_sequence()
         self.generate_rand_performer_data(number_of_operations)
         self.create_festival_sequence()
@@ -115,7 +115,7 @@ class Controller:
         self.generate_rand_performance_data(number_of_operations)
 
     def truncate_all_tables(self):
-        if input("Are you sure? Type Yes or No: ") == "Yes":
+        if input("Confirm The Action. Type Yes or No: ") == "Yes":
             self.controller_Performance.truncate_Performance_table()
             self.controller_Festival.truncate_Festival_table()
             self.controller_Performer.truncate_Performer_table()
@@ -123,8 +123,10 @@ class Controller:
             print("Ok")
 
     def display_analytics(self):
+        print("-------------------------------------------------------------------------------")
         self.controller_analytics.popular_artist()
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("-------------------------------------------------------------------------------")
         self.controller_analytics.number_of_performance()
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("-------------------------------------------------------------------------------")
         self.controller_analytics.genre_analytics()
+        print("-------------------------------------------------------------------------------")

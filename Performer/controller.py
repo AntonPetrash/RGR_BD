@@ -12,9 +12,9 @@ class ControllerPerformer:
         genre = self.view_Performer.get_genre()
 
         if self.model_Performer.add_Performer(Artist_ID, name, surname, genre):
-            self.view_Performer.show_Performer_message("Artist added successfully!")
+            self.view_Performer.show_Performer_message("Successfully Add An Artist.")
         else:
-            self.view_Performer.show_Performer_message("Failed to add Artist.")
+            self.view_Performer.show_Performer_message("Artist Not Added.")
 
     def view_Performers(self):
         # Call a method from the Model class to get all the Performer
@@ -41,11 +41,11 @@ class ControllerPerformer:
 
             # Display a message about the result of the operation
             if success:
-                self.view_Performer.show_Performer_message("Artist updated successfully!")
+                self.view_Performer.show_Performer_message("Successfully Update An Artist")
             else:
-                self.view_Performer.show_Performer_message("Failed to update artist.")
+                self.view_Performer.show_Performer_message("Artist Not Updated.")
         else:
-            self.view_Performer.show_Performer_message("Artist with the specified ID does not exist.")
+            self.view_Performer.show_Performer_message("It Does Not Exist An Artist With This ID")
 
     def delete_Performer(self):
         # Request the ID of the Performer to be deleted
@@ -60,31 +60,31 @@ class ControllerPerformer:
 
             # Display a message about the result of the operation
             if success:
-                self.view_Performer.show_Performer_message("Performer deleted successfully!")
+                self.view_Performer.show_Performer_message("successfully Deleted A Performer")
             else:
-                self.view_Performer.show_Performer_message("Failed to delete Performer.")
+                self.view_Performer.show_Performer_message("Performer Don`t Deleted")
         else:
-            self.view_Performer.show_Performer_message("Performer with the specified ID does not exist.")
+            self.view_Performer.show_Performer_message("It Does Not Exist A Performer With This ID")
 
     def create_Performer_sequence(self):
         # Call method create_Performer_sequence from class ModelPerformer
         self.model_Performer.create_Performer_sequence()
-        self.view_Performer.show_Performer_message("Performer sequence created successfully!")
+        self.view_Performer.show_Performer_message("Successfully Created Performer Sequence")
 
     def generate_rand_Performer_data(self, number_of_operations):
         # Call the generate_rand_Performer_data method from the ModelPerformer class
         success = self.model_Performer.generate_rand_Performer_data(number_of_operations)
 
         if success:
-            self.view_Performer.show_Performer_message(f"{number_of_operations} Performers generated successfully!")
+            self.view_Performer.show_Performer_message(f"{number_of_operations} Performers Created successfully!")
         else:
-            self.view_Performer.show_Performer_message("Failed to generate Performers.")
+            self.view_Performer.show_Performer_message("Failed To Create Performers.")
 
     def truncate_Performer_table(self):
         # Call the method of the corresponding model
         success = self.model_Performer.truncate_Performer_table()
 
         if success:
-            self.view_Performer.show_Performer_message("All Performers data truncated successfully!")
+            self.view_Performer.show_Performer_message("All Performers Data Deleted")
         else:
-            self.view_Performer.show_Performer_message("Failed to truncate Performer data.")
+            self.view_Performer.show_Performer_message("Performer Data Not Deleted")

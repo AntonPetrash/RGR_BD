@@ -15,9 +15,9 @@ class ControllerPerformance:
 
         # Display a message about the result of the operation
         if success:
-            self.view_Performance.show_Performance_message("Performance added successfully!")
+            self.view_Performance.show_Performance_message("Successfully Add New Performance")
         else:
-            self.view_Performance.show_Performance_message("Failed to add Performance.")
+            self.view_Performance.show_Performance_message("Performance Don`t Deleted")
 
     def view_Performances(self):
         # Call a method from the Model class to retrieve all reservations
@@ -43,11 +43,11 @@ class ControllerPerformance:
 
             # Display a message about the result of the operation
             if success:
-                self.view_Performance.show_Performance_message("Performance updated successfully!")
+                self.view_Performance.show_Performance_message("Successfully Updated a Performance")
             else:
-                self.view_Performance.show_Performance_message("Failed to update Performance.")
+                self.view_Performance.show_Performance_message("Performance Don`t Updated")
         else:
-            self.view_Performance.show_Performance_message("Performance with the specified ID does not exist.")
+            self.view_Performance.show_Performance_message("It does`nt Exist A Performance With This ID")
 
     def delete_Performance(self):
         # Request the ID of the Performance to be deleted
@@ -62,16 +62,16 @@ class ControllerPerformance:
 
             # Display a message about the result of the operation
             if success:
-                self.view_Performance.show_Performance_message("Performance deleted successfully!")
+                self.view_Performance.show_Performance_message("Successfully Delete A Performance")
             else:
-                self.view_Performance.show_Performance_message("Failed to delete Performance.")
+                self.view_Performance.show_Performance_message("A Performance Don`t deleted")
         else:
             self.view_Performance.show_Performance_message("Performance with the specified ID does not exist.")
 
     def create_Performance_sequence(self):
         # Call method create_Performance_sequence from class ModelPerformance
         self.model_Performance.create_Performance_sequence()
-        self.view_Performance.show_Performance_message("Performance sequence created successfully!")
+        self.view_Performance.show_Performance_message("Successfully Created A Performance Sequence")
 
     def generate_rand_Performance_data(self, number_of_operations):
         # Call method generate_rand_Performance_data from class ModelPerformance
@@ -79,15 +79,15 @@ class ControllerPerformance:
 
         if success:
             self.view_Performance.show_Performance_message(
-                f"{number_of_operations} Performances generated successfully!")
+                f"{number_of_operations} Successfully Created Performances")
         else:
-            self.view_Performance.show_Performance_message("Failed to generate Performance.")
+            self.view_Performance.show_Performance_message("Performance Does`nt Created")
 
     def truncate_Performance_table(self):
         # Call the method of the corresponding model
         success = self.model_Performance.truncate_Performance_table()
 
         if success:
-            self.view_Performance.show_Performance_message("All Performances truncated successfully!")
+            self.view_Performance.show_Performance_message("All Performances Data Successfully Deleted")
         else:
-            self.view_Performance.show_Performance_message("Failed to truncate Performances data.")
+            self.view_Performance.show_Performance_message("All Performances Data Does`nt Deleted")

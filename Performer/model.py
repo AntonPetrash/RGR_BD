@@ -10,7 +10,7 @@ class ModelPerformer:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Performer: {str(e)}")
+            print(f"Error With Adding A Performer: {str(e)}")
             return False   # Returns False if insertion fails
 
     def get_all_Performers(self):
@@ -26,7 +26,7 @@ class ModelPerformer:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when updating a Performer: {str(e)}")
+            print(f"Error With A Performer Updating: {str(e)}")
             return False   # Returns False if insertion fails
 
     def delete_Performer(self, Artist_ID):
@@ -37,7 +37,7 @@ class ModelPerformer:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when deleting a Artist: {str(e)}")
+            print(f"Error With An Artist Deleting: {str(e)}")
             return False  # Returns False if insertion fails
 
     def check_Performer_existence(self, Artist_ID):
@@ -77,7 +77,7 @@ class ModelPerformer:
             return True  # Returns True if the insertion was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Performer: {str(e)}")
+            print(f"Error With A Performer Adding: {str(e)}")
             return False   # Returns False if insertion fails
 
     def truncate_Performer_table(self):
@@ -89,5 +89,5 @@ class ModelPerformer:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Performer: {str(e)}")
+            print(f"Error With A Performer`s Data Deleting: {str(e)}")
             return False   # Returns False if insertion fails

@@ -11,7 +11,7 @@ class ModelFestival:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Festival: {str(e)}")
+            print(f"Error With Adding A Festival: {str(e)}")
             return False  # Returns False if insertion fails
 
     def get_all_Festivals(self):
@@ -28,7 +28,7 @@ class ModelFestival:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when updating the Festival: {str(e)}")
+            print(f"Error With Updating A Festival: {str(e)}")
             return False   # Returns False if insertion fails
 
     def delete_Festival(self, Festival_ID):
@@ -39,7 +39,7 @@ class ModelFestival:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"An error when deleting a Festival breaks the foreign key restriction: {str(e)}")
+            print(f"Error With Deleting A Festival Violates A Foreign Key Constraint: {str(e)}")
             return False   # Returns False if insertion fails
 
     def check_Festival_existence(self, Festival_ID):
@@ -80,7 +80,7 @@ class ModelFestival:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Festival: {str(e)}")
+            print(f"Error With Adding The Festivals: {str(e)}")
             return False   # Returns False if insertion fails
 
 
@@ -93,5 +93,5 @@ class ModelFestival:
             return True  # Returns True if the update was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Festival: {str(e)}")
+            print(f"Error With Deleting All Festival`s Data: {str(e)}")
             return False   # Returns False if insertion fails

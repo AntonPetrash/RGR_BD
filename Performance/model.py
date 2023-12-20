@@ -25,7 +25,7 @@ class ModelPerformance:
                 return True
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Performance: {str(e)}")
+            print(f"Error With Adding A Performance: {str(e)}")
             return False
 
     def get_all_Performance(self):
@@ -45,7 +45,7 @@ class ModelPerformance:
         except Exception as e:
             # Handling an error if the update failed
             self.conn.rollback()
-            print(f"Error when updating a Performance: {str(e)}")
+            print(f"Error With Updating A Performance: {str(e)}")
             return False   # Returns False if insertion fails
 
     def delete_Performance(self, Performance_ID):
@@ -58,7 +58,7 @@ class ModelPerformance:
         except Exception as e:
             # Handling an error in case the deletion failed
             self.conn.rollback()
-            print(f"Error when deleting a Performance: {str(e)}")
+            print(f"Error With Deleting A Performance: {str(e)}")
             return False   # Returns False if insertion fails
 
     def check_Performance_existence(self, Performance_ID):
@@ -101,7 +101,7 @@ class ModelPerformance:
             return True
         except Exception as e:
             self.conn.rollback()
-            print(f"Error while generating Performance: {str(e)}")
+            print(f"Error With Creating A Performance: {str(e)}")
             return False
 
 
@@ -114,5 +114,5 @@ class ModelPerformance:
             return True  # Returns True if the insertion was successful
         except Exception as e:
             self.conn.rollback()
-            print(f"Error when adding a Performer: {str(e)}")
+            print(f"Error With Deleting A Performance Data: {str(e)}")
             return False  # Returns False if insertion fails

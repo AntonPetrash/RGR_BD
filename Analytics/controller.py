@@ -11,7 +11,7 @@ class ControllerAnalytics:
         if popular_artist_data:
             self.view_analytics.display_popular_artist(popular_artist_data)
         else:
-            print("Error when performing analytics")
+            print("Error With Analytics Implemetation")
 
     def number_of_performance(self):
         # Do analytics
@@ -21,7 +21,7 @@ class ControllerAnalytics:
         if number_of_performance_data:
             self.view_analytics.display_number_of_performance(number_of_performance_data)
         else:
-            print("Error when performing analytics")
+            print("Error With Analytics Implemetation")
 
     def genre_analytics(self):
         # Do analytics
@@ -31,4 +31,4 @@ class ControllerAnalytics:
         if genre_analytics_data is not None:
             self.view_analytics.display_genre_analytics(genre_analytics_data)
         else:
-            print("Error when performing analytics")
+            print("Error With Analytics Implemetation")
