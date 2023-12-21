@@ -64,15 +64,15 @@ class Controller:
 
     MENU_OPTIONS = [
         "Add New Performance",
-        "Show Performance By Id",
+        "Show Performances",
         "Renewal Performance",
         "Remove Performance",
         "Add New Festival",
-        "Show Festival By Id",
+        "Show Festivals",
         "Renewal Festival",
         "Remove Festival",
         "Add New Performer",
-        "Show Performer By Id",
+        "Show Performers",
         "Renewal Performer",
         "Remove Performer",
         "Create Data By Random",
